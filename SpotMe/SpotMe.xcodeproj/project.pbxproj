@@ -7,29 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		959B58E8924CD1ED038BEEF4 /* Pods_SpotMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992DA4B0C07209EC15C8809D /* Pods_SpotMe.framework */; };
+		2D739B0B985781342C2A71B5 /* Pods_SpotMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39890D002F9D4095FC91827 /* Pods_SpotMe.framework */; };
 		BD0FE8621DB70D48009DB184 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD0FE8611DB70D48009DB184 /* GoogleService-Info.plist */; };
+		BD0FE8641DB7104B009DB184 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8631DB7104B009DB184 /* HomeVC.swift */; };
+		BD0FE8671DB7F843009DB184 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8661DB7F843009DB184 /* AuthService.swift */; };
+		BD0FE8691DB80B5E009DB184 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8681DB80B5E009DB184 /* DataService.swift */; };
+		BD0FE86B1DB80F85009DB184 /* ConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE86A1DB80F85009DB184 /* ConvoVC.swift */; };
+		BD0FE8711DB816BB009DB184 /* ConvoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8701DB816BB009DB184 /* ConvoCell.swift */; };
+		BD0FE8731DB818B2009DB184 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8721DB818B2009DB184 /* User.swift */; };
+		BD0FE8771DB82E1E009DB184 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8761DB82E1E009DB184 /* ChatVC.swift */; };
+		BD0FE8791DB8308C009DB184 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8781DB8308C009DB184 /* Event.swift */; };
 		BD603D361DB6FBBD00F8013A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603D351DB6FBBD00F8013A /* AppDelegate.swift */; };
-		BD603D381DB6FBBD00F8013A /* FaceBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603D371DB6FBBD00F8013A /* FaceBookVC.swift */; };
+		BD603D381DB6FBBD00F8013A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603D371DB6FBBD00F8013A /* LoginVC.swift */; };
 		BD603D3B1DB6FBBD00F8013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD603D391DB6FBBD00F8013A /* Main.storyboard */; };
 		BD603D3E1DB6FBBD00F8013A /* SpotMe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD603D3C1DB6FBBD00F8013A /* SpotMe.xcdatamodeld */; };
 		BD603D401DB6FBBD00F8013A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD603D3F1DB6FBBD00F8013A /* Assets.xcassets */; };
 		BD603D431DB6FBBD00F8013A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD603D411DB6FBBD00F8013A /* LaunchScreen.storyboard */; };
+		BD7A1C8C1DB83637007B1FDA /* EventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7A1C8B1DB83637007B1FDA /* EventVC.swift */; };
+		BD7A1C8E1DB83657007B1FDA /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7A1C8D1DB83657007B1FDA /* EventCell.swift */; };
+		BD7A1C901DB8371A007B1FDA /* Convo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7A1C8F1DB8371A007B1FDA /* Convo.swift */; };
+		BDAB89D21DB9523700FA8A85 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAB89D11DB9523700FA8A85 /* FBSDKCoreKit.framework */; };
+		BDAB89D41DB9538600FA8A85 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAB89D31DB9538600FA8A85 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C2C5595E47D2DC75B74ACE8 /* Pods-SpotMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpotMe/Pods-SpotMe.release.xcconfig"; sourceTree = "<group>"; };
-		992DA4B0C07209EC15C8809D /* Pods_SpotMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F81865557B727441C290BF /* Pods-SpotMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpotMe/Pods-SpotMe.release.xcconfig"; sourceTree = "<group>"; };
+		8FA1A23A3235A733324A6D7F /* Pods-SpotMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotMe/Pods-SpotMe.debug.xcconfig"; sourceTree = "<group>"; };
 		BD0FE8611DB70D48009DB184 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BD0FE8631DB7104B009DB184 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BD0FE8661DB7F843009DB184 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		BD0FE8681DB80B5E009DB184 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		BD0FE86A1DB80F85009DB184 /* ConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoVC.swift; sourceTree = "<group>"; };
+		BD0FE8701DB816BB009DB184 /* ConvoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoCell.swift; sourceTree = "<group>"; };
+		BD0FE8721DB818B2009DB184 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BD0FE8761DB82E1E009DB184 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		BD0FE8781DB8308C009DB184 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BD603D321DB6FBBD00F8013A /* SpotMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD603D351DB6FBBD00F8013A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD603D371DB6FBBD00F8013A /* FaceBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceBookVC.swift; sourceTree = "<group>"; };
+		BD603D371DB6FBBD00F8013A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BD603D3A1DB6FBBD00F8013A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD603D3D1DB6FBBD00F8013A /* SpotMe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpotMe.xcdatamodel; sourceTree = "<group>"; };
 		BD603D3F1DB6FBBD00F8013A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD603D421DB6FBBD00F8013A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD603D441DB6FBBD00F8013A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F76B367F02B80D93FDB633E2 /* Pods-SpotMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpotMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpotMe/Pods-SpotMe.debug.xcconfig"; sourceTree = "<group>"; };
+		BD7A1C8B1DB83637007B1FDA /* EventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventVC.swift; sourceTree = "<group>"; };
+		BD7A1C8D1DB83657007B1FDA /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		BD7A1C8F1DB8371A007B1FDA /* Convo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convo.swift; sourceTree = "<group>"; };
+		BDAB89D11DB9523700FA8A85 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		BDAB89D31DB9538600FA8A85 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		BDE2960A1DB97AFF00D95B0D /* SpotMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpotMe.entitlements; sourceTree = "<group>"; };
+		D39890D002F9D4095FC91827 /* Pods_SpotMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,33 +64,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959B58E8924CD1ED038BEEF4 /* Pods_SpotMe.framework in Frameworks */,
+				2D739B0B985781342C2A71B5 /* Pods_SpotMe.framework in Frameworks */,
+				BDAB89D21DB9523700FA8A85 /* FBSDKCoreKit.framework in Frameworks */,
+				BDAB89D41DB9538600FA8A85 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11C00749599CC60B634FCC34 /* Pods */ = {
+		20D44240549073128C145AEA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F76B367F02B80D93FDB633E2 /* Pods-SpotMe.debug.xcconfig */,
-				2C2C5595E47D2DC75B74ACE8 /* Pods-SpotMe.release.xcconfig */,
+				8FA1A23A3235A733324A6D7F /* Pods-SpotMe.debug.xcconfig */,
+				75F81865557B727441C290BF /* Pods-SpotMe.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		2601631481B13CCEF2632061 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				992DA4B0C07209EC15C8809D /* Pods_SpotMe.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BD0FE85E1DB70819009DB184 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BD0FE8721DB818B2009DB184 /* User.swift */,
+				BD0FE8781DB8308C009DB184 /* Event.swift */,
+				BD7A1C8F1DB8371A007B1FDA /* Convo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -71,7 +95,11 @@
 		BD0FE85F1DB70821009DB184 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BD603D371DB6FBBD00F8013A /* FaceBookVC.swift */,
+				BD7A1C8B1DB83637007B1FDA /* EventVC.swift */,
+				BD603D371DB6FBBD00F8013A /* LoginVC.swift */,
+				BD0FE8631DB7104B009DB184 /* HomeVC.swift */,
+				BD0FE86A1DB80F85009DB184 /* ConvoVC.swift */,
+				BD0FE8761DB82E1E009DB184 /* ChatVC.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -79,8 +107,19 @@
 		BD0FE8601DB7082F009DB184 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BD0FE8701DB816BB009DB184 /* ConvoCell.swift */,
+				BD7A1C8D1DB83657007B1FDA /* EventCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BD0FE8651DB7F834009DB184 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BD0FE8661DB7F843009DB184 /* AuthService.swift */,
+				BD0FE8681DB80B5E009DB184 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		BD603D291DB6FBBD00F8013A = {
@@ -88,8 +127,8 @@
 			children = (
 				BD603D341DB6FBBD00F8013A /* SpotMe */,
 				BD603D331DB6FBBD00F8013A /* Products */,
-				11C00749599CC60B634FCC34 /* Pods */,
-				2601631481B13CCEF2632061 /* Frameworks */,
+				20D44240549073128C145AEA /* Pods */,
+				E84E87B31AFBBC0C31D5B206 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +143,8 @@
 		BD603D341DB6FBBD00F8013A /* SpotMe */ = {
 			isa = PBXGroup;
 			children = (
+				BDE2960A1DB97AFF00D95B0D /* SpotMe.entitlements */,
+				BD0FE8651DB7F834009DB184 /* Services */,
 				BD0FE85E1DB70819009DB184 /* Models */,
 				BD0FE8601DB7082F009DB184 /* Views */,
 				BD0FE85F1DB70821009DB184 /* Controllers */,
@@ -118,6 +159,16 @@
 			path = SpotMe;
 			sourceTree = "<group>";
 		};
+		E84E87B31AFBBC0C31D5B206 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDAB89D31DB9538600FA8A85 /* FBSDKLoginKit.framework */,
+				BDAB89D11DB9523700FA8A85 /* FBSDKCoreKit.framework */,
+				D39890D002F9D4095FC91827 /* Pods_SpotMe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,12 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD603D471DB6FBBD00F8013A /* Build configuration list for PBXNativeTarget "SpotMe" */;
 			buildPhases = (
-				4BB4C7A41FA7D2363D5260B1 /* [CP] Check Pods Manifest.lock */,
+				7C8E07771576235165CA22CD /* [CP] Check Pods Manifest.lock */,
 				BD603D2E1DB6FBBD00F8013A /* Sources */,
 				BD603D2F1DB6FBBD00F8013A /* Frameworks */,
 				BD603D301DB6FBBD00F8013A /* Resources */,
-				3E2D00E249F62A9AA2E7FD6E /* [CP] Embed Pods Frameworks */,
-				BB7A302B0E9E3F2993C4B387 /* [CP] Copy Pods Resources */,
+				4C03483E5A95B492054267A3 /* [CP] Embed Pods Frameworks */,
+				6C2DC2AB72B74EBE7D188543 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -155,6 +206,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 4HMV9AP26W;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -191,7 +247,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3E2D00E249F62A9AA2E7FD6E /* [CP] Embed Pods Frameworks */ = {
+		4C03483E5A95B492054267A3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -206,22 +262,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotMe/Pods-SpotMe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4BB4C7A41FA7D2363D5260B1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BB7A302B0E9E3F2993C4B387 /* [CP] Copy Pods Resources */ = {
+		6C2DC2AB72B74EBE7D188543 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,6 +277,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpotMe/Pods-SpotMe-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7C8E07771576235165CA22CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,9 +299,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD603D381DB6FBBD00F8013A /* FaceBookVC.swift in Sources */,
+				BD603D381DB6FBBD00F8013A /* LoginVC.swift in Sources */,
+				BD0FE8791DB8308C009DB184 /* Event.swift in Sources */,
+				BD0FE8641DB7104B009DB184 /* HomeVC.swift in Sources */,
+				BD7A1C8C1DB83637007B1FDA /* EventVC.swift in Sources */,
+				BD0FE86B1DB80F85009DB184 /* ConvoVC.swift in Sources */,
+				BD0FE8671DB7F843009DB184 /* AuthService.swift in Sources */,
+				BD0FE8771DB82E1E009DB184 /* ChatVC.swift in Sources */,
+				BD7A1C8E1DB83657007B1FDA /* EventCell.swift in Sources */,
+				BD0FE8691DB80B5E009DB184 /* DataService.swift in Sources */,
+				BD0FE8731DB818B2009DB184 /* User.swift in Sources */,
 				BD603D361DB6FBBD00F8013A /* AppDelegate.swift in Sources */,
+				BD7A1C901DB8371A007B1FDA /* Convo.swift in Sources */,
 				BD603D3E1DB6FBBD00F8013A /* SpotMe.xcdatamodeld in Sources */,
+				BD0FE8711DB816BB009DB184 /* ConvoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,13 +431,15 @@
 		};
 		BD603D481DB6FBBD00F8013A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F76B367F02B80D93FDB633E2 /* Pods-SpotMe.debug.xcconfig */;
+			baseConfigurationReference = 8FA1A23A3235A733324A6D7F /* Pods-SpotMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpotMe/SpotMe.entitlements;
 				DEVELOPMENT_TEAM = 4HMV9AP26W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/{username}/Documents/FacebookSDK",
 				);
 				INFOPLIST_FILE = SpotMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -382,13 +451,15 @@
 		};
 		BD603D491DB6FBBD00F8013A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C2C5595E47D2DC75B74ACE8 /* Pods-SpotMe.release.xcconfig */;
+			baseConfigurationReference = 75F81865557B727441C290BF /* Pods-SpotMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpotMe/SpotMe.entitlements;
 				DEVELOPMENT_TEAM = 4HMV9AP26W;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/{username}/Documents/FacebookSDK",
 				);
 				INFOPLIST_FILE = SpotMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
