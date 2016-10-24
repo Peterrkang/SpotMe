@@ -6,7 +6,9 @@
 //  Copyright © 2016 Peter Kang. All rights reserved.
 //
 
-import Foundation
+/*
+ 
+ import Foundation
 import FirebaseAuth
 
 
@@ -106,3 +108,4 @@ class AuthService {
     
     
 }
+ */

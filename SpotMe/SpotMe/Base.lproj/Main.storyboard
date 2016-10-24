@@ -19,37 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TmY-p9-TNI">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="aHG-1K-NRx"/>
-                                    <constraint firstAttribute="height" constant="33" id="suW-wx-4Zg"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-mq-fNG">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="gTc-w8-p8Q"/>
-                                    <constraint firstAttribute="width" constant="200" id="pjg-X8-HyG"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3f-Vs-HM0">
-                                <color key="backgroundColor" white="0.88575405640000004" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Nmg-Oy-yQT"/>
-                                    <constraint firstAttribute="height" constant="30" id="eVY-R0-ACn"/>
-                                </constraints>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.006874454522" green="0.051172283030000001" blue="0.05588942308" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8O0-vB-q4E"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KxU-60-UEO">
                                 <state key="normal" title="FaceBook Login"/>
                                 <connections>
@@ -59,21 +28,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="TOc-mq-fNG" firstAttribute="centerX" secondItem="TmY-p9-TNI" secondAttribute="centerX" id="2st-eC-0Jw"/>
-                            <constraint firstItem="KxU-60-UEO" firstAttribute="top" secondItem="G3f-Vs-HM0" secondAttribute="bottom" constant="72" id="Apy-zz-M69"/>
-                            <constraint firstItem="G3f-Vs-HM0" firstAttribute="centerX" secondItem="TOc-mq-fNG" secondAttribute="centerX" id="CwF-Gi-4Em"/>
-                            <constraint firstItem="TmY-p9-TNI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="200" id="DSc-WW-7kz"/>
-                            <constraint firstItem="TOc-mq-fNG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HDk-Lu-lhz"/>
-                            <constraint firstItem="G3f-Vs-HM0" firstAttribute="top" secondItem="TOc-mq-fNG" secondAttribute="bottom" constant="40" id="I7X-bi-ol9"/>
-                            <constraint firstItem="TOc-mq-fNG" firstAttribute="top" secondItem="TmY-p9-TNI" secondAttribute="bottom" constant="30" id="L26-H5-VnI"/>
-                            <constraint firstItem="KxU-60-UEO" firstAttribute="centerX" secondItem="G3f-Vs-HM0" secondAttribute="centerX" id="VN9-Na-rDU"/>
-                            <constraint firstItem="TmY-p9-TNI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yWd-BN-1zP"/>
+                            <constraint firstItem="KxU-60-UEO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGy-22-Cza"/>
+                            <constraint firstItem="KxU-60-UEO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="izm-g2-e30"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="emailField" destination="TmY-p9-TNI" id="gxt-oO-Mx3"/>
-                        <outlet property="passwordField" destination="TOc-mq-fNG" id="Rwz-Wa-exv"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,10 +286,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ConvoCell" rowHeight="100" id="w2F-th-aOB" customClass="ConvoCell" customModule="SpotMe" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1000" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w2F-th-aOB" id="obm-8m-dAT">
-                                            <frame key="frameInset" width="1000" height="99"/>
+                                            <frame key="frameInset" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-79-Ezl">
@@ -610,13 +568,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="LoginVC" id="970-zu-aB6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oG-rv-E1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="113.79310344827587"/>
+            <point key="canvasLocation" x="751" y="192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jSJ-6v-VUK">

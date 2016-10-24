@@ -18,10 +18,16 @@ struct User {
     private var _uid: String
     private var _image: String
     private var _currentLocation: [Double]
+    private var _gender: String
     
     
     var uid: String {
         return _uid
+    }
+    
+    var gender: String {
+    
+        return _gender
     }
     
     var fullName: String {
@@ -37,11 +43,12 @@ struct User {
     }
     
     
-    init(uid: String, firstName: String, lastName: String, image: String, currentLocation: [Double]){
+    init(uid: String, firstName: String, lastName: String, image: String, currentLocation: [Double], gender: String){
         _uid = uid
         _firstName = firstName
         _lastName = lastName
         _image = image
+        _gender = gender
         _currentLocation = currentLocation
     }
 
