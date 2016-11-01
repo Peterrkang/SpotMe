@@ -240,14 +240,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-C0-BQE">
-                                <items>
-                                    <navigationItem title="Messages" id="UVg-Jf-zhR">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="Ys3-7d-gvI"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Event" id="A66-Ip-WPm"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SLC-gy-f23">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -302,6 +294,18 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jir-lI-zxU">
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5h-C0-BQE">
+                                <items>
+                                    <navigationItem title="Messages" id="UVg-Jf-zhR">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" id="Ys3-7d-gvI"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Event" id="A66-Ip-WPm">
+                                            <connections>
+                                                <segue destination="EcZ-K4-vbx" kind="show" id="g4m-g4-3Zt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -323,7 +327,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hf6-SF-1GQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="795"/>
+            <point key="canvasLocation" x="1478" y="834"/>
         </scene>
         <!--EventVC-->
         <scene sceneID="2r4-va-QFU">
@@ -642,6 +646,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lXq-E3-XKh"/>
+        <segue reference="g4m-g4-3Zt"/>
     </inferredMetricsTieBreakers>
 </document>

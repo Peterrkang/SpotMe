@@ -21,8 +21,8 @@ class ConvoCell: UITableViewCell {
         // Initialization code
     }
 
-    func updateUI(user: User) {
-        fullNameLabel.text = user.fullName
+    func updateUI(convo: Convo) {
+        fullNameLabel.text = "\(convo.eventTitle) \(convo.user2)"
     }
 
 }

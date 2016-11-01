@@ -13,7 +13,7 @@ class Convo {
 
     private var _user1: String
     private var _user2: String
-    
+    private var _eventTitle: String
     
     
     var user1: String {
@@ -24,10 +24,15 @@ class Convo {
         return _user2
     }
     
+    var eventTitle: String {
+        return _eventTitle
+    }
     
-    init(user1: String, user2: String) {
+    
+    init(user1: String, user2: String, eventTitle: String) {
         _user1 = user1
         _user2 = user2
+        _eventTitle = eventTitle
     }
 
 

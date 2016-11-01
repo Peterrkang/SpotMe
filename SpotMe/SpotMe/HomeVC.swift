@@ -15,7 +15,7 @@ import SwiftKeychainWrapper
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    let userID: String? = KeychainWrapper.standard.string(forKey: KEY_UID)
+    private let _userID: String? = KeychainWrapper.standard.string(forKey: KEY_UID)
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -35,30 +35,19 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.instance.eventsRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             
             if let events = snapshot.value as? Dictionary<String, AnyObject>{
-                
                 for(key, value) in events{
-                    
-                    
-                    if(value["userId"] as? String == self.userID){
-                        
+                    if(value["userId"] as? String == self._userID){
                         if let title = value["title"] as? String {
-                            
-                            let event = Event(id: key, userId: self.userID!, title: title)
+                            let event = Event(id: key, userId: self._userID!, title: title)
                             self.events.append(event)
                         
                         }
-                        
                     }
-                    
                 }
-                
-        
             }
             self.tableView.reloadData()
             
         }
-
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,7 +70,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cell = tableView.cellForRow(at: indexPath) as! EventCell
+        //let cell = tableView.cellForRow(at: indexPath) as! EventCell
         let event = events[indexPath.row]
         
         performSegue(withIdentifier: "ConvoVC", sender: event)

@@ -29,6 +29,7 @@
 		BDAB89D21DB9523700FA8A85 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAB89D11DB9523700FA8A85 /* FBSDKCoreKit.framework */; };
 		BDAB89D41DB9538600FA8A85 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAB89D31DB9538600FA8A85 /* FBSDKLoginKit.framework */; };
 		BDE2960C1DB9836C00D95B0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2960B1DB9836C00D95B0D /* Constants.swift */; };
+		BDE2960E1DC9380B00D95B0D /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2960D1DC9380B00D95B0D /* Chat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		BDAB89D31DB9538600FA8A85 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		BDE2960A1DB97AFF00D95B0D /* SpotMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpotMe.entitlements; sourceTree = "<group>"; };
 		BDE2960B1DB9836C00D95B0D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BDE2960D1DC9380B00D95B0D /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		D39890D002F9D4095FC91827 /* Pods_SpotMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpotMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +92,7 @@
 				BD0FE8721DB818B2009DB184 /* User.swift */,
 				BD0FE8781DB8308C009DB184 /* Event.swift */,
 				BD7A1C8F1DB8371A007B1FDA /* Convo.swift */,
+				BDE2960D1DC9380B00D95B0D /* Chat.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				BD0FE8641DB7104B009DB184 /* HomeVC.swift in Sources */,
 				BD7A1C8C1DB83637007B1FDA /* EventVC.swift in Sources */,
 				BD0FE86B1DB80F85009DB184 /* ConvoVC.swift in Sources */,
+				BDE2960E1DC9380B00D95B0D /* Chat.swift in Sources */,
 				BDE2960C1DB9836C00D95B0D /* Constants.swift in Sources */,
 				BD0FE8671DB7F843009DB184 /* AuthService.swift in Sources */,
 				BD0FE8771DB82E1E009DB184 /* ChatVC.swift in Sources */,

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Peter Kang. All rights reserved.
 //
 
-/*import UIKit
+import UIKit
 import Firebase
 
 
@@ -14,6 +14,24 @@ import Firebase
 private let reuseIdentifier = "Cell"
 
 class ChatVC: UICollectionViewController {
+    
+    
+    private var _chat: Chat!
+    
+    
+    var chat: Chat {
+    
+        get {
+            return _chat
+        
+        } set {
+            _chat = newValue
+        }
+    
+    }
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,4 +64,4 @@ class ChatVC: UICollectionViewController {
     }
 
 
-}*/
+}
