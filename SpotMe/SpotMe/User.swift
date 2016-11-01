@@ -10,7 +10,7 @@ import Foundation
 
 
 
-struct User {
+class User {
 
 
     private var _firstName: String
@@ -50,6 +50,13 @@ struct User {
         _image = image
         _gender = gender
         _currentLocation = currentLocation
+    }
+    
+    
+    func updateLocation(location: Double){
+    
+        self._currentLocation = [location]
+    
     }
 
 

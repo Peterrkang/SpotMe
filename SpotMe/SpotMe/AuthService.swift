@@ -27,51 +27,6 @@ class AuthService {
         return _instance
     }
     
-    func login(email: String, password: String, onComplete: Completion?){
-        
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: {(user, error) in
-            if error != nil {
-                if let errorCode = FIRAuthErrorCode(rawValue: error!._code) {
-                    if errorCode == .errorCodeUserNotFound {
-                        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-                            if error != nil {
-                                //show error to user
-                                self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
-                            } else {
-                                if user?.uid != nil {
-                                    
-                                    DataService.instance.saveUser(uid: user!.uid)
-                                    //sign in
-                                    FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-                                        if error != nil {
-                                            self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
-                                            //show error to user
-                                        } else {
-                                            onComplete?(nil, user)
-                                            //succesful
-                                        }
-                                    })
-                                }
-                        
-                            }
-                    
-                        })
-                    }
-        
-                } else {
-                    self.handleFirebaseError(error: error! as NSError, onComplete: onComplete)
-                
-                }
-        
-        
-            } else {
-            
-                onComplete?(nil, user)
-                
-            }
-        })
-    }
-    
     
     
     func handleFirebaseError(error: NSError, onComplete: Completion?) {

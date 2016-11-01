@@ -81,21 +81,28 @@ class LoginVC: UIViewController {
     func completeSignIn(uid: String){
         KeychainWrapper.standard.set(uid, forKey: KEY_UID)
         print("Peter: saved uid to keyChain")
-        //performSegue(withIdentifier: "HomeVC", sender: nil)
+        performSegue(withIdentifier: "HomeVC", sender: nil)
     }
     
     
     func getFBUserData(uid: String){
         if((FBSDKAccessToken.current()) != nil){
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email, gender"]).start(completionHandler: { (connection, result, error) -> Void in
+            
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email, gender, picture"]).start(completionHandler: { (connection, result, error) -> Void in
                 if error == nil {
                     let dict = result as! [String : AnyObject]
                     DataService.instance.saveUser(uid: uid, displayName: dict["name"] as! String, gender: dict["gender"] as! String, email: dict["email"] as! String)
+                    
+                    
+                    
+                    
 
                 }
             })
         }
     }
+    
+    
     
 
 

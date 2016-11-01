@@ -6,6 +6,8 @@
 //  Copyright © 2016 Peter Kang. All rights reserved.
 //
 
+
+
 import UIKit
 import FirebaseDatabase
 
@@ -15,31 +17,29 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var users = [User]()
+    private var convos = [Convo]()
     
-    private var selectedUsers = Dictionary<String, User>()
+    private var event: Event
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsMultipleSelection = true
 
-        DataService.instance.usersRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+
+        DataService.instance.convosRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             
-            if let users = snapshot.value as? Dictionary<String, AnyObject>{
-                for (key, value) in users {
-                    if let dict = value as? Dictionary<String, AnyObject>{
-                        if let profile = dict["profile"] as? Dictionary<String, AnyObject> {
-                            if let firstName = profile["firstName"] as? String {
-                                let uid = key
-                                //let user = User(uid: uid, firstName: firstName)
-                                //self.users.append(user)
-                            }
-                        }
+            if let convos = snapshot.value as? Dictionary<String, AnyObject>{
+                for (key, value) in convos {
+                    if let value["eventId"] == event.id {
+                    
+                        if 
+                        
+                    
                     }
                 }
             }
@@ -47,16 +47,22 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
         }
         
-        
-        
     }
+    
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        self.event = sender as! Event
+    }
+
+    
+
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConvoCell") as! ConvoCell
-        let user = users[indexPath.row]
-        cell.updateUI(user: user)
+        let convo = convos[indexPath.row]
+        cell.updateUI(convos: convo)
         return cell
     }
     
