@@ -22,7 +22,7 @@ class ConvoCell: UITableViewCell {
     }
 
     func updateUI(convo: Convo) {
-        fullNameLabel.text = "\(convo.eventId)"
+        fullNameLabel.text = "\(convo.id)"
     }
 
 }

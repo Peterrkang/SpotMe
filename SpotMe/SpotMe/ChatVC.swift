@@ -8,12 +8,16 @@
 
 import UIKit
 import FirebaseDatabase
+import SwiftKeychainWrapper
 
 
-class ChatVC: UICollectionViewController, UITextFieldDelegate {
+class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
-    
+    private let _userID: String? = KeychainWrapper.standard.string(forKey: KEY_UID)
     private var _convo: Convo!
+    
+    
+    
     
     
     var convo: Convo {
@@ -24,7 +28,6 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate {
         }
     }
     
-    
     lazy var inputTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Message..."
@@ -33,20 +36,29 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate {
         return textField
     }()
     
-    
+    var tableView: UITableView = {
+
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Peter: \(convo)")
         
+
         navigationItem.title = "Chat"
+
+        setupComponents()
         
+        tableView.delegate = self
+        tableView.dataSource = self
         
-        setupInputComponents()
+        observeMessage()
         
     }
     
-    func setupInputComponents(){
+    func setupComponents(){
         
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +70,16 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate {
         containerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         containerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+
+        view.addSubview(tableView)
+        
+        
+        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        tableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
+
         
         let sendButton = UIButton(type: .system)
         sendButton.setTitle("Send", for: .normal)
@@ -90,10 +112,31 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate {
         
     }
     
+    
+    var toUser: String {
+        if _userID == convo.user1 {
+            return convo.user2
+        } else {
+            return convo.user1
+        }
+    
+    }
+    
+    var fromUser: String {
+        if _userID == convo.user1 {
+            return convo.user1
+        } else {
+            return convo.user2
+        }
+        
+    }
+    
+    
     func handleSend(){
-        let ref = DataService.instance.convosRef.child("ajksdhfk")
+        let timestamp: String = "\(NSDate())"
+        let ref = DataService.instance.convosRef.child(convo.id)
         let childRef = ref.childByAutoId()
-        let values = ["text": inputTextField.text!]
+        let values = ["text": inputTextField.text!, "toUser": toUser, "fromUser": fromUser, "timestamp": timestamp]
         childRef.updateChildValues(values)
         
     }
@@ -101,6 +144,46 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         handleSend()
         return true
+    }
+    
+    
+    
+    private var messages = [Message]()
+    
+    func observeMessage() {
+    
+        let ref = DataService.instance.convosRef.child(convo.id)
+        ref.observe(.childAdded, with: { (snapshot: FIRDataSnapshot) in
+            if let dict = snapshot.value as? Dictionary<String, AnyObject>{
+                if let text = dict["text"] as? String {
+                    if let fromUser = dict["fromUser"] as? String {
+                        if let timestamp = dict["timestamp"] as? String {
+                            if let toUser = dict["toUser"] as? String {
+                                let message = Message(toUser: toUser, fromUser: fromUser, text: text, timestamp: timestamp)
+                                self.messages.append(message)
+                                
+                            }
+                        }
+                    }
+                }
+                
+            }
+            self.tableView.reloadData()
+        }, withCancel: nil)
+
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ 
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
+        let message = messages[indexPath.row]
+        cell.textLabel?.text = message.text
+        return cell
+        
     }
     
 

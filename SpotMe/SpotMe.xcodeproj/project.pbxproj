@@ -16,6 +16,8 @@
 		BD0FE8711DB816BB009DB184 /* ConvoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8701DB816BB009DB184 /* ConvoCell.swift */; };
 		BD0FE8731DB818B2009DB184 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8721DB818B2009DB184 /* User.swift */; };
 		BD0FE8791DB8308C009DB184 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0FE8781DB8308C009DB184 /* Event.swift */; };
+		BD1EE2131DC9CDF700CB761D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE2121DC9CDF700CB761D /* Message.swift */; };
+		BD1EE2171DC9D4C400CB761D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1EE2161DC9D4C400CB761D /* MessageCell.swift */; };
 		BD603D361DB6FBBD00F8013A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603D351DB6FBBD00F8013A /* AppDelegate.swift */; };
 		BD603D381DB6FBBD00F8013A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD603D371DB6FBBD00F8013A /* LoginVC.swift */; };
 		BD603D3B1DB6FBBD00F8013A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD603D391DB6FBBD00F8013A /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 		BD0FE8701DB816BB009DB184 /* ConvoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoCell.swift; sourceTree = "<group>"; };
 		BD0FE8721DB818B2009DB184 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BD0FE8781DB8308C009DB184 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		BD1EE2121DC9CDF700CB761D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BD1EE2161DC9D4C400CB761D /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		BD603D321DB6FBBD00F8013A /* SpotMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD603D351DB6FBBD00F8013A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD603D371DB6FBBD00F8013A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 				BD0FE8721DB818B2009DB184 /* User.swift */,
 				BD0FE8781DB8308C009DB184 /* Event.swift */,
 				BD7A1C8F1DB8371A007B1FDA /* Convo.swift */,
+				BD1EE2121DC9CDF700CB761D /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				BD0FE8701DB816BB009DB184 /* ConvoCell.swift */,
 				BD7A1C8D1DB83657007B1FDA /* EventCell.swift */,
+				BD1EE2161DC9D4C400CB761D /* MessageCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 				BD0FE8731DB818B2009DB184 /* User.swift in Sources */,
 				BD603D361DB6FBBD00F8013A /* AppDelegate.swift in Sources */,
 				BD7A1C901DB8371A007B1FDA /* Convo.swift in Sources */,
+				BD1EE2171DC9D4C400CB761D /* MessageCell.swift in Sources */,
+				BD1EE2131DC9CDF700CB761D /* Message.swift in Sources */,
 				BD603D3E1DB6FBBD00F8013A /* SpotMe.xcdatamodeld in Sources */,
 				BD0FE8711DB816BB009DB184 /* ConvoCell.swift in Sources */,
 			);
