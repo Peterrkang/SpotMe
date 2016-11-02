@@ -23,7 +23,6 @@
                                 <state key="normal" title="FaceBook Login"/>
                                 <connections>
                                     <action selector="facebookBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KNQ-tF-Yvs"/>
-                                    <segue destination="EcZ-K4-vbx" kind="show" identifier="HomeVC" id="lXq-E3-XKh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -33,6 +32,9 @@
                             <constraint firstItem="KxU-60-UEO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="izm-g2-e30"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="EcZ-K4-vbx" kind="show" identifier="HomeVC" id="ffn-Ig-Znt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +249,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w2F-th-aOB" id="obm-8m-dAT">
-                                            <frame key="frameInset" width="375" height="99"/>
+                                            <frame key="frameInset" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FullName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFQ-79-Ezl">
@@ -323,11 +325,46 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="SLC-gy-f23" id="q2E-yp-1Uk"/>
+                        <segue destination="fRz-yP-77E" kind="show" identifier="ChatVC" id="oeQ-v1-YTV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hf6-SF-1GQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="834"/>
+            <point key="canvasLocation" x="1478" y="795"/>
+        </scene>
+        <!--ChatVC-->
+        <scene sceneID="B4S-DL-FMJ">
+            <objects>
+                <collectionViewController id="fRz-yP-77E" customClass="ChatVC" customModule="SpotMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="nez-W2-nay">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gfp-dK-O2e">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tnX-eV-mrH">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="fRz-yP-77E" id="8Pc-qc-blw"/>
+                            <outlet property="delegate" destination="fRz-yP-77E" id="XI2-Il-PhY"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MlE-4c-a6t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="795"/>
         </scene>
         <!--EventVC-->
         <scene sceneID="2r4-va-QFU">
@@ -363,7 +400,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3kk-ay-uCu" id="yuQ-bz-2C4">
-                                            <frame key="frameInset" width="375" height="134"/>
+                                            <frame key="frameInset" width="375" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzC-zk-WuB">
@@ -440,40 +477,6 @@
             </objects>
             <point key="canvasLocation" x="1477.5999999999999" y="113.79310344827587"/>
         </scene>
-        <!--ChatVC-->
-        <scene sceneID="qu7-DI-AAV">
-            <objects>
-                <collectionViewController id="F3B-1p-wdN" customClass="ChatVC" customModule="SpotMe" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Kp-CH-onS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="odm-i9-53e">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9cR-MO-Jcm">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="F3B-1p-wdN" id="uss-ck-x7b"/>
-                            <outlet property="delegate" destination="F3B-1p-wdN" id="jpg-uA-riG"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T4B-eC-OtW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2158" y="795"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="h5z-qD-KCF">
             <objects>
@@ -511,10 +514,10 @@
             </objects>
             <point key="canvasLocation" x="2157.5999999999999" y="113.79310344827587"/>
         </scene>
-        <!--SpotMe-->
+        <!--HomeVC-->
         <scene sceneID="R5M-Pj-Qux">
             <objects>
-                <viewController id="EcZ-K4-vbx" customClass="HomeVC" customModule="SpotMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EcZ-K4-vbx" userLabel="HomeVC" customClass="HomeVC" customModule="SpotMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="phk-Ng-pEn"/>
                         <viewControllerLayoutGuide type="bottom" id="uOZ-oR-KCA"/>
@@ -539,15 +542,12 @@
                                             <frame key="frameInset" minY="-1" width="375" height="1"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="1ZW-PZ-JiC" kind="show" identifier="ConvoVC" id="bOe-uX-sV6"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EventCell" rowHeight="135" id="ttd-gA-yYu" customClass="EventCell" customModule="SpotMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ttd-gA-yYu" id="VKS-zz-gdT">
-                                            <frame key="frameInset" width="375" height="134"/>
+                                            <frame key="frameInset" width="375" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3H-kz-mip">
@@ -612,19 +612,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="SpotMe" id="Oun-zK-7kU">
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Mct-vz-PCz"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="AW5-AJ-QWC">
-                            <connections>
-                                <segue destination="ji1-QT-ycp" kind="show" id="ByQ-8a-Pq8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="AW5-AJ-QWC"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="3xQ-t0-HQy" id="9HO-hm-5hB"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginVC" id="SPp-Yy-Hbh"/>
+                        <segue destination="1ZW-PZ-JiC" kind="show" identifier="ConvoVC" id="KLI-gl-KI2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oG-rv-E1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="764" y="139"/>
+            <point key="canvasLocation" x="764" y="128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jSJ-6v-VUK">

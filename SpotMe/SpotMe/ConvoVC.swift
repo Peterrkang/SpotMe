@@ -43,13 +43,18 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.instance.convosRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             
             if let convos = snapshot.value as? Dictionary<String, AnyObject>{
-
                 for (key, value) in convos {
                     if let dict = value as? Dictionary<String, AnyObject>{
-                        print("Peter: \(dict)")
                         if dict["eventId"] as? String == self.event.id {
-                            let convo = Convo(user1: dict["user1"] as! String, user2: dict["user2"] as! String, eventTitle: dict["eventId"] as! String)
-                            self.convos.append(convo)
+                            if let user2 = dict["user2"] as? String {
+                                if let user1 = dict["user1"] as? String {
+                                        let convo = Convo(id: key, user1: user1, user2: user2, eventId: self.event.id)
+                                        self.convos.append(convo)
+                                    
+                                    }
+                                }
+                            
+ 
                         }
                     }
                 }
@@ -73,7 +78,6 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //let cell = tableView.cellForRow(at: indexPath) as! ConvoCell
         let convo = convos[indexPath.row]
         performSegue(withIdentifier: "ChatVC", sender: convo)
         
@@ -82,8 +86,8 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ChatVC" {
             if let destination = segue.destination as? ChatVC {
-                if let chat = sender as? Chat {
-                    destination.chat = chat
+                if let convo = sender as? Convo {
+                    destination.convo = convo
                 }
             }
             
