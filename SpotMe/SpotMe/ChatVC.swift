@@ -15,10 +15,7 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
     
     private let _userID: String? = KeychainWrapper.standard.string(forKey: KEY_UID)
     private var _convo: Convo!
-    
-    
-    
-    
+    private var messages = [Message]()
     
     var convo: Convo {
         get {
@@ -26,6 +23,24 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
         } set {
             _convo = newValue
         }
+    }
+    
+    var toUser: String {
+        if _userID == convo.user1 {
+            return convo.user2
+        } else {
+            return convo.user1
+        }
+        
+    }
+    
+    var fromUser: String {
+        if _userID == convo.user1 {
+            return convo.user1
+        } else {
+            return convo.user2
+        }
+        
     }
     
     lazy var inputTextField: UITextField = {
@@ -37,7 +52,6 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
     }()
     
     var tableView: UITableView = {
-
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -45,15 +59,11 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        navigationItem.title = "Chat"
 
         setupComponents()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         observeMessage()
         
     }
@@ -62,9 +72,7 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
         
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        
         view.addSubview(containerView)
-        
         containerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         containerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         containerView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
@@ -72,15 +80,12 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
         containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
         view.addSubview(tableView)
-        
-        
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         tableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 15).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
 
-        
         let sendButton = UIButton(type: .system)
         sendButton.setTitle("Send", for: .normal)
         sendButton.translatesAutoresizingMaskIntoConstraints = false
@@ -112,24 +117,7 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
         
     }
     
-    
-    var toUser: String {
-        if _userID == convo.user1 {
-            return convo.user2
-        } else {
-            return convo.user1
-        }
-    
-    }
-    
-    var fromUser: String {
-        if _userID == convo.user1 {
-            return convo.user1
-        } else {
-            return convo.user2
-        }
-        
-    }
+
     
     
     func handleSend(){
@@ -143,15 +131,11 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         handleSend()
+        textField.text = ""
         return true
     }
-    
-    
-    
-    private var messages = [Message]()
-    
+
     func observeMessage() {
-    
         let ref = DataService.instance.convosRef.child(convo.id)
         ref.observe(.childAdded, with: { (snapshot: FIRDataSnapshot) in
             if let dict = snapshot.value as? Dictionary<String, AnyObject>{
@@ -161,6 +145,8 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
                             if let toUser = dict["toUser"] as? String {
                                 let message = Message(toUser: toUser, fromUser: fromUser, text: text, timestamp: timestamp)
                                 self.messages.append(message)
+                                
+                                
                                 
                             }
                         }
@@ -178,15 +164,11 @@ class ChatVC: UICollectionViewController, UITextFieldDelegate, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
- 
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellId")
         let message = messages[indexPath.row]
         cell.textLabel?.text = message.text
         return cell
         
     }
-    
-
-    
     
 }

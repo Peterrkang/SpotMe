@@ -16,14 +16,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     private let _userID: String? = KeychainWrapper.standard.string(forKey: KEY_UID)
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     private var events = [Event]()
     
-    
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,25 +27,10 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        DataService.instance.eventsRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
-            
-            if let events = snapshot.value as? Dictionary<String, AnyObject>{
-                for(key, value) in events{
-                    if(value["userId"] as? String == self._userID){
-                        if let title = value["title"] as? String {
-                            let event = Event(id: key, userId: self._userID!, title: title)
-                            self.events.append(event)
-                        
-                        }
-                    }
-                }
-            }
-            self.tableView.reloadData()
-            
-        }
+        observeEvent()
+
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         //performSegue(withIdentifier: "LoginVC", sender: nil)
         guard FIRAuth.auth()?.currentUser != nil else{
@@ -59,8 +40,24 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func observeEvent(){
+        DataService.instance.eventsRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+            if let events = snapshot.value as? Dictionary<String, AnyObject>{
+                for(key, value) in events{
+                    if(value["userId"] as? String == self._userID){
+                        if let title = value["title"] as? String {
+                            let event = Event(id: key, userId: self._userID!, title: title)
+                            self.events.append(event)
+                            
+                        }
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
         let event = events[indexPath.row]
         cell.updateUI(event: event)
@@ -69,10 +66,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //let cell = tableView.cellForRow(at: indexPath) as! EventCell
         let event = events[indexPath.row]
-        
         performSegue(withIdentifier: "ConvoVC", sender: event)
         
     }
@@ -85,14 +79,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     destination.event = event
                 }
             }
-            
         }
     }
-
-    
-
-    
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

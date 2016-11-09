@@ -31,6 +31,9 @@
 		BDAB89D41DB9538600FA8A85 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDAB89D31DB9538600FA8A85 /* FBSDKLoginKit.framework */; };
 		BDE2960C1DB9836C00D95B0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE2960B1DB9836C00D95B0D /* Constants.swift */; };
 		BDE296121DC942C000D95B0D /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE296111DC942C000D95B0D /* ChatVC.swift */; };
+		BDF6888E1DCAFB73005175EC /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF6888D1DCAFB73005175EC /* MapVC.swift */; };
+		BDF688A81DCB26C0005175EC /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF688A71DCB26C0005175EC /* CreateEventVC.swift */; };
+		BDF688AA1DCB8B44005175EC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF688A91DCB8B44005175EC /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		BDE2960A1DB97AFF00D95B0D /* SpotMe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpotMe.entitlements; sourceTree = "<group>"; };
 		BDE2960B1DB9836C00D95B0D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BDE296111DC942C000D95B0D /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		BDF6888D1DCAFB73005175EC /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		BDF688A71DCB26C0005175EC /* CreateEventVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		BDF688A91DCB8B44005175EC /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				BD0FE8631DB7104B009DB184 /* HomeVC.swift */,
 				BD0FE86A1DB80F85009DB184 /* ConvoVC.swift */,
 				BDE296111DC942C000D95B0D /* ChatVC.swift */,
+				BDF6888D1DCAFB73005175EC /* MapVC.swift */,
+				BDF688A71DCB26C0005175EC /* CreateEventVC.swift */,
+				BDF688A91DCB8B44005175EC /* File.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 				BD0FE8791DB8308C009DB184 /* Event.swift in Sources */,
 				BD0FE8641DB7104B009DB184 /* HomeVC.swift in Sources */,
 				BD7A1C8C1DB83637007B1FDA /* EventVC.swift in Sources */,
+				BDF688AA1DCB8B44005175EC /* File.swift in Sources */,
 				BD0FE86B1DB80F85009DB184 /* ConvoVC.swift in Sources */,
 				BDE2960C1DB9836C00D95B0D /* Constants.swift in Sources */,
 				BD0FE8671DB7F843009DB184 /* AuthService.swift in Sources */,
@@ -320,10 +330,12 @@
 				BD0FE8691DB80B5E009DB184 /* DataService.swift in Sources */,
 				BD0FE8731DB818B2009DB184 /* User.swift in Sources */,
 				BD603D361DB6FBBD00F8013A /* AppDelegate.swift in Sources */,
+				BDF6888E1DCAFB73005175EC /* MapVC.swift in Sources */,
 				BD7A1C901DB8371A007B1FDA /* Convo.swift in Sources */,
 				BD1EE2171DC9D4C400CB761D /* MessageCell.swift in Sources */,
 				BD1EE2131DC9CDF700CB761D /* Message.swift in Sources */,
 				BD603D3E1DB6FBBD00F8013A /* SpotMe.xcdatamodeld in Sources */,
+				BDF688A81DCB26C0005175EC /* CreateEventVC.swift in Sources */,
 				BD0FE8711DB816BB009DB184 /* ConvoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

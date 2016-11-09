@@ -40,6 +40,14 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         
         
+        observeConvo()
+    }
+    
+    
+    
+    
+    
+    func observeConvo(){
         DataService.instance.convosRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             
             if let convos = snapshot.value as? Dictionary<String, AnyObject>{
@@ -48,21 +56,23 @@ class ConvoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         if dict["eventId"] as? String == self.event.id {
                             if let user2 = dict["user2"] as? String {
                                 if let user1 = dict["user1"] as? String {
-                                        let convo = Convo(id: key, user1: user1, user2: user2, eventId: self.event.id)
-                                        self.convos.append(convo)
+                                    let convo = Convo(id: key, user1: user1, user2: user2, eventId: self.event.id)
+                                    self.convos.append(convo)
                                     
-                                    }
                                 }
+                            }
                             
- 
+                            
                         }
                     }
                 }
             }
             self.tableView.reloadData()
-
+            
         }
+    
     }
+    
     
 
 

@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Firebase
 import FBSDKLoginKit
+import GoogleMaps
+import GooglePlaces
 
 
 @UIApplicationMain
@@ -20,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FIRApp.configure()
+        GMSServices.provideAPIKey(GOOGLE_API_KEY)
+        GMSPlacesClient.provideAPIKey(GOOGLE_PLACE_API_KEY)
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         // Add any custom logic here.

@@ -11,62 +11,63 @@ import FirebaseDatabase
 
 class EventVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     private var events = [Event]()
     
-    private var selectedUsers = Dictionary<String, User>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsMultipleSelection = true
         
-        DataService.instance.usersRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
-            
+    }
+    
+    
+    /*
+     Distance/keywords
+     
+     func observeEvent(){
+        DataService.instance.eventsRef.observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
             if let events = snapshot.value as? Dictionary<String, AnyObject>{
-                for (key, value) in events {
-                    if let dict = value as? Dictionary<String, AnyObject>{
-                        if let profile = dict["profile"] as? Dictionary<String, AnyObject> {
-                            if let title = profile["title"] as? String {
-                                let eid = key
-                                //let event = Event(eid: eid, title: title)
-                                //self.events.append(event)
-                            }
+                for(key, value) in events{
+                    if(value["userId"] as? String == self._userID){
+                        if let title = value["title"] as? String {
+                            let event = Event(id: key, userId: self._userID!, title: title)
+                            self.events.append(event)
+                            
                         }
                     }
                 }
             }
             self.tableView.reloadData()
-            
         }
-        
-        
-        
-    }
-    
+    }*/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConvoCell") as! ConvoCell
-        //let user = users[indexPath.row]
-        //cell.updateUI(user: user)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as! EventCell
+        let event = events[indexPath.row]
+        cell.updateUI(event: event)
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let event = events[indexPath.row]
+        performSegue(withIdentifier: "ConvoVC", sender: event)
         
-        let cell = tableView.cellForRow(at: indexPath) as! ConvoCell
-        //let user = users[indexPath.row]
-        //selectedUsers[user.uid] = user
-        
-        
-        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConvoVC" {
+            if let destination = segue.destination as? ConvoVC {
+                if let event = sender as? Event {
+                    destination.event = event
+                }
+            }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,7 +75,7 @@ class EventVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return events.count
     }
 
 }

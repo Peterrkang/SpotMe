@@ -32,49 +32,35 @@ class LoginVC: UIViewController {
     
     
     @IBAction func facebookBtnPressed(_ sender: AnyObject){
-        
         let facebookLogin = FBSDKLoginManager()
-
-
         facebookLogin.logIn(withReadPermissions: ["email", "public_profile", "user_photos"], from: self) {(result, error) in
             if error != nil {
                 print("Peter: Nope")
             }else if result?.isCancelled == true {
-             
                 print("Peter: User cancelled")
-            
             }else {
                 print("Peter: connected")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
-                
             }
-        
         }
-    
     }
 
     
     
     
     func firebaseAuth(_ credential: FIRAuthCredential){
-        
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
             if error != nil {
-                
                 print("Peter: Unable to authenticate wit firebase")
             }else {
                 print("Peter: your in")
                 if let user = user {
                     self.getFBUserData(uid: user.uid)
                     self.completeSignIn(uid: user.uid)
-                
                 }
             }
-        
         })
-        
-    
     }
     
     
@@ -87,15 +73,10 @@ class LoginVC: UIViewController {
     
     func getFBUserData(uid: String){
         if((FBSDKAccessToken.current()) != nil){
-            
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, email, gender, picture"]).start(completionHandler: { (connection, result, error) -> Void in
                 if error == nil {
                     let dict = result as! [String : AnyObject]
                     DataService.instance.saveUser(uid: uid, displayName: dict["name"] as! String, gender: dict["gender"] as! String, email: dict["email"] as! String)
-                    
-                    
-                    
-                    
 
                 }
             })

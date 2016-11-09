@@ -13,5 +13,8 @@ target 'SpotMe' do
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
   pod 'SwiftKeychainWrapper'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
 
 end
